@@ -16,6 +16,20 @@
     "stylelint-config-standard": "^18.3.0",
     "stylelint-scss": "^3.9.2"
   },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "jest": true,
+      "node": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+      "no-unused-vars": "warn"
+    }
+  },
   "stylelint": {
     "extends": ["stylelint-config-standard", "stylelint-config-recommended-scss"],
     "ignoreFiles": [
