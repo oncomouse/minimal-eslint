@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
     "babel-eslint": "^10.1",
     "eslint": "^7.3"
   },
@@ -24,6 +26,35 @@
     "parser": "babel-eslint",
     "rules": {
       "no-unused-vars": "warn"
-    }
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts",
+          "**/*.tsx"
+        ],
+        "extends": [
+          "eslint:recommended",
+          "plugin:@typescript-eslint/eslint-recommended",
+          "plugin:@typescript-eslint/recommended"
+        ],
+        "globals": {
+          "Atomics": "readonly",
+          "SharedArrayBuffer": "readonly"
+        },
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+          "ecmaFeatures": {
+            "jsx": true
+          },
+          "ecmaVersion": 2018,
+          "sourceType": "module",
+          "project": "./tsconfig.json"
+        },
+        "plugins": [
+          "@typescript-eslint"
+        ]
+      }
+    ]
   }
 }
